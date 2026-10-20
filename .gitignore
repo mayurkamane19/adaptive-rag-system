@@ -1,0 +1,53 @@
+# Python / Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.hypothesis/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Data & Persistence
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+data/documents/*
+!data/documents/.gitkeep
+data/conversations/*
+!data/conversations/.gitkeep
+scratch/*
+!scratch/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Streamlit
+.streamlit/*
+!.streamlit/config.toml

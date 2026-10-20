@@ -1,0 +1,44 @@
+# Git and source control
+.git
+.gitignore
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE configurations
+.idea/
+.vscode/
+*.swp
+*.swo
+desktop.ini
+Thumbs.db
+
+# Environment secrets and local logs
+.env
+.env.*
+!.env.example
+*.log
+logs/
+.system_generated/
+
+# Data persistence and private documents
+data/documents/*
+!data/documents/.gitkeep
+data/conversations/*
+!data/conversations/.gitkeep
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+scratch/*
+!scratch/.gitkeep

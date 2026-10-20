@@ -1,0 +1,83 @@
+[
+  {
+    "id": "eval_01",
+    "question": "What is the annual paid vacation leave allowance for full-time employees?",
+    "expected_answer": "Full-time employees receive 20 days of annual paid vacation leave.",
+    "category": "simple",
+    "is_answerable": true,
+    "expected_sources": ["leave_policy.pdf"],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_02",
+    "question": "Can employees carry forward unused annual leave to the next calendar year?",
+    "expected_answer": "Employees may carry forward up to 5 days of unused annual leave into the next calendar year.",
+    "category": "simple",
+    "is_answerable": true,
+    "expected_sources": ["leave_policy.pdf"],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_03",
+    "question": "Compare remote work security guidelines versus office network rules.",
+    "expected_answer": "Remote work requires multi-factor authentication and encrypted VPN connections, whereas office network connections use standard internal intranet access.",
+    "category": "complex",
+    "is_answerable": true,
+    "expected_sources": ["workplace_policies.pdf", "security_policy.pdf"],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_04",
+    "question": "What steps must be followed when a security incident or data breach occurs?",
+    "expected_answer": "Employees must immediately disconnect affected systems, notify the security response team, and document the incident timeline.",
+    "category": "complex",
+    "is_answerable": true,
+    "expected_sources": ["incident_plan.pdf", "cyber_sec.pdf"],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_05",
+    "question": "What are the company's password complexity and length requirements?",
+    "expected_answer": "Passwords must be at least 12 characters in length and include uppercase letters, lowercase letters, numbers, and symbols.",
+    "category": "simple",
+    "is_answerable": true,
+    "expected_sources": ["security_policy.pdf", "cyber_sec.pdf"],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_06",
+    "question": "What are the company's daily meal per-diem allowances for international business flights?",
+    "expected_answer": "I couldn't find enough information in the provided documents to answer this question.",
+    "category": "unanswerable",
+    "is_answerable": false,
+    "expected_sources": [],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_07",
+    "question": "Are domestic pets permitted inside the headquarters dining facilities on weekends?",
+    "expected_answer": "I couldn't find enough information in the provided documents to answer this question.",
+    "category": "unanswerable",
+    "is_answerable": false,
+    "expected_sources": [],
+    "conversation_history": []
+  },
+  {
+    "id": "eval_08",
+    "question": "Can I carry it forward?",
+    "expected_answer": "Employees may carry forward up to 5 days of unused annual leave into the next calendar year.",
+    "category": "conversational",
+    "is_answerable": true,
+    "expected_sources": ["leave_policy.pdf"],
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "What is the annual leave allowance?"
+      },
+      {
+        "role": "assistant",
+        "content": "Full-time employees receive 20 days of annual paid vacation leave."
+      }
+    ]
+  }
+]

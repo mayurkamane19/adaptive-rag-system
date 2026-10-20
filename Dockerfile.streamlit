@@ -1,0 +1,33 @@
+# Production Dockerfile for Adaptive RAG System Frontend (Streamlit)
+FROM python:3.10-slim AS base
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install frontend dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir streamlit>=1.31.0 httpx>=0.26.0 requests>=2.31.0
+
+# Create unprivileged user
+RUN groupadd -g 1000 appgroup && \
+    useradd -u 1000 -g appgroup -m -s /bin/bash appuser
+
+RUN mkdir -p /app/frontend && chown -R appuser:appgroup /app
+
+# Copy Streamlit application code
+COPY --chown=appuser:appgroup frontend/ /app/frontend/
+
+USER appuser
+
+EXPOSE 8501
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+    CMD curl -f http://localhost:8501/_stcore/health || exit 1
+
+CMD ["streamlit", "run", "frontend/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
